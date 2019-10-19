@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_10_19_124851) do
     t.string "code"
     t.string "owner"
     t.string "city"
-    t.string "type"
+    t.string "demandType"
     t.date "dueDate"
     t.integer "region_id"
     t.integer "supervisor_id"
