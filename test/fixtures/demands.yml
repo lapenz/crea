@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  owner: MyString
+  city: MyString
+  type: 
+  dueDate: 2019-10-19
+
+two:
+  code: MyString
+  owner: MyString
+  city: MyString
+  type: 
+  dueDate: 2019-10-19

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @demand.code %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @demand.owner %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @demand.city %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @demand.type %>
+</p>
+
+<p>
+  <strong>Duedate:</strong>
+  <%= @demand.dueDate %>
+</p>
+
+<%= link_to 'Edit', edit_demand_path(@demand) %> |
+<%= link_to 'Back', demands_path %>
