@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Demands</h1>
-
-<table>
+<h1>Demandas</h1>
+<br/>
+<table class="table">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Owner</th>
-      <th>City</th>
-      <th>Type</th>
-      <th>Duedate</th>
+      <th>Código</th>
+      <th>Proprietário</th>
+      <th>Cidade</th>
+      <th>Tipo</th>
+      <th>Data cadastro</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Demand', new_demand_path %>
+<%= link_to 'New Demand', new_demand_path, class: 'btn btn-primary' %>

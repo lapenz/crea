@@ -11,40 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+  <div class="form-group">
+    <%= form.label :code, "Código" %>
+    <%= form.text_field :code, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :region_id %>
-    <%= form.select :region_id, Region.all.collect {|region| [region.description, region.id]} %>
+  <div class="form-group">
+    <%= form.label :region_id, "Regional" %>
+    <%= form.select :region_id, Region.all.collect {|region| [region.description, region.id]}, {}, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :supervisor_id %>
-    <%= form.select :supervisor_id, Supervisor.all.collect {|supervisor| [supervisor.name, supervisor.id]} %>
+  <div class="form-group">
+    <%= form.label :supervisor_id, "Fiscal" %>
+    <%= form.select :supervisor_id, Supervisor.all.collect {|supervisor| [supervisor.name, supervisor.id]}, {}, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :owner %>
-    <%= form.text_field :owner %>
+  <div class="form-group">
+    <%= form.label :owner, "Proprietário" %>
+    <%= form.text_field :owner, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
+  <div class="form-group">
+    <%= form.label :city, "Cidade" %>
+    <%= form.text_field :city, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :demandType %>
-    <%= form.select :demandType, [['Diligência', 'DILI'], ['Denúncia', 'DEN'], ['SSFIS', 'FIS'], ['Renovável', 'RENOV'],
-                                  ['Sinistro', 'SINIS']] %>
+  <div class="form-group">
+    <%= form.label :demandType, "Tipo" %>
+    <%= form.select :demandType, [['Diligência', 'Diligência'], ['Denúncia', 'Denúncia'], ['SSFIS', 'SSFIS'], ['Renovável', 'Renovável'],
+                                  ['Sinistro', 'Sinistro']], {}, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :dueDate %>
-    <%= form.date_select :dueDate %>
+  <div class="form-group">
+    <%= form.label :dueDate, "Data cadastro" %>
+    <%= form.date_select :dueDate, class: 'form-control' %>
   </div>
 
   <div class="actions">

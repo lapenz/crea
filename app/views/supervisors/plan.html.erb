@@ -1,36 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Planejamento</h1>
-<h2>Fiscal: <%= @supervisor.name %></h2>
-
-<table>
+<h1>Planejamento - Fiscal: <%= @supervisor.name %></h1>
+<br/>
+<table class="table table-sm">
   <thead>
     <tr>
       <th>Código</th>
       <th>Destinatário</th>
       <th>Cidade</th>
       <th>Tipo</th>
+      <th>Distância</th>
+      <th>Tempo de viagem</th>
       <th>Data de cadastro</th>
     </tr>
   </thead>
 
   <tbody>
-    <% count = 0 %>
+
     <% @demands.each do |demand| %>
-      <tr>
+      <tr class="<%= "table-danger" if Date.current.beginning_of_day - demand.dueDate.beginning_of_day > 20.days %>">
         <td><%= demand.code %></td>
         <td><%= demand.owner %></td>
         <td><%= demand.city %></td>
         <td><%= demand.demandType %></td>
-        <td><%= demand.dueDate %></td>
+        <td><%= demand.distance %> KM</td>
+        <td><%= demand.minutes %> minutos</td>
+        <td><%= dateHelper demand.dueDate %></td>
 
-        <% if count % 4 == 0 %>
-          <td colspan="5"><%= image_tag "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/03/r16x9/20190301101226_1200_675_-_google_maps.jpg", width: '60px' %></td>
-
-        <% end %>
-
-        <% count = count + 1 %>
       </tr>
+
+      <% if(demand.code == "14" || demand.code == "26" || demand.code == "39") %>
+        <tr>
+          <td colspan="7">
+            <%= image_tag "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/03/r16x9/20190301101226_1200_675_-_google_maps.jpg", width: '140px' %>
+            <p/>
+          </td>
+        </tr>
+
+      <% end %>
+
 
 
     <% end %>
