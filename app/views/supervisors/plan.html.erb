@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Planejamento</h1>
+<h2>Fiscal: <%= @supervisor.name %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Destinatário</th>
+      <th>Cidade</th>
+      <th>Tipo</th>
+      <th>Data de cadastro</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% count = 0 %>
+    <% @demands.each do |demand| %>
+      <tr>
+        <td><%= demand.code %></td>
+        <td><%= demand.owner %></td>
+        <td><%= demand.city %></td>
+        <td><%= demand.demandType %></td>
+        <td><%= demand.dueDate %></td>
+
+        <% if count % 4 == 0 %>
+          <td colspan="5"><%= image_tag "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/03/r16x9/20190301101226_1200_675_-_google_maps.jpg", width: '60px' %></td>
+
+        <% end %>
+
+        <% count = count + 1 %>
+      </tr>
+
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>

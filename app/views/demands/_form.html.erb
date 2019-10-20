@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :region_id %>
-    <%= form.number_field :region_id %>
+    <%= form.select :region_id, Region.all.collect {|region| [region.description, region.id]} %>
   </div>
 
   <div class="field">
     <%= form.label :supervisor_id %>
-    <%= form.number_field :supervisor_id %>
+    <%= form.select :supervisor_id, Supervisor.all.collect {|supervisor| [supervisor.name, supervisor.id]} %>
   </div>
 
   <div class="field">
@@ -38,7 +38,8 @@
 
   <div class="field">
     <%= form.label :demandType %>
-    <%= form.text_field :demandType %>
+    <%= form.select :demandType, [['Diligência', 'DILI'], ['Denúncia', 'DEN'], ['SSFIS', 'FIS'], ['Renovável', 'RENOV'],
+                                  ['Sinistro', 'SINIS']] %>
   </div>
 
   <div class="field">

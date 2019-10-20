@@ -15,7 +15,7 @@
     <% @supervisors.each do |supervisor| %>
       <tr>
         <td><%= supervisor.name %></td>
-        <td><%= supervisor.region_id %></td>
+        <td><%= supervisor.region.description %></td>
         <td><%= link_to 'Show', supervisor %></td>
         <td><%= link_to 'Edit', edit_supervisor_path(supervisor) %></td>
         <td><%= link_to 'Destroy', supervisor, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -7,6 +7,11 @@ class SupervisorsController < ApplicationController
     @supervisors = Supervisor.all
   end
 
+  def plan
+    @demands = Demand.where(supervisor_id: params[:supervisor_id]).order(:priority)
+    @supervisor = Supervisor.find(params[:supervisor_id])
+  end
+
   # GET /supervisors/1
   # GET /supervisors/1.json
   def show
