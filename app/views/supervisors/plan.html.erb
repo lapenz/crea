@@ -17,6 +17,10 @@
 
   <tbody>
 
+
+  <% tempototal = 0 %>
+  <% distanciatotal = 0 %>
+
     <% @demands.each do |demand| %>
       <tr class="<%= "table-danger" if Date.current.beginning_of_day - demand.dueDate.beginning_of_day > 20.days %>">
         <td><%= demand.code %></td>
@@ -29,7 +33,14 @@
 
       </tr>
 
+      <% tempototal = tempototal + demand.minutes %>
+      <% distanciatotal = distanciatotal + demand.distance %>
       <% if(demand.code == "14" || demand.code == "26" || demand.code == "39") %>
+        <tr>
+          <td colspan="7"><strong>Total de <%= distanciatotal %> KM em <%= tempototal %> minutos</strong></td>
+        </tr>
+        <% tempototal = 0 %>
+        <% distanciatotal = 0 %>
         <tr>
           <td colspan="7">
             <%= image_tag "https://img.olhardigital.com.br/uploads/acervo_imagens/2019/03/r16x9/20190301101226_1200_675_-_google_maps.jpg", width: '140px' %>
